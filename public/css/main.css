@@ -1,0 +1,177 @@
+body {
+    font-family: Montserrat, Roboto, serif;
+    color: #001630;
+}
+hr {
+    margin: 0;
+    background-color: #001533;
+/*    border: thin solid #001533;*/
+}
+h1, h2, h3, .second-title {
+    font-weight: 600;
+}
+a, a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+/*article:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: #fafafa;
+}*/
+/* *********************************************
+******************NAVBAR************************
+ **********************************************/
+.nav-link {
+    color: #001533;
+    font-weight: 600;
+}
+#navbar-image {
+    max-height: 50px;
+}
+.custom-toggler {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    float: right;
+}
+/* *********************************************
+******************NAVBAR************************
+ **********************************************/
+
+/* *********************************************
+******************HEAD************************
+ **********************************************/
+.main-title {
+    font-size: 2em;
+    text-align: center;
+    margin: 30px 0;
+}
+.second-title {
+    font-size: 1.7em;
+}
+.main-image > img {
+    width: 100%;
+}
+/* *********************************************
+******************HEAD************************
+ **********************************************/
+
+/* *********************************************
+******************NEWS SECTION******************
+ **********************************************/
+.card, .card > img {
+    border: none;
+    border-radius: 0;
+}
+.card-date {
+    font-size: 0.7em;
+}
+.card-body {
+    padding: 0 0 20px 0;
+}
+.card-title {
+    font-size: 1.2em;
+}
+/* *********************************************
+******************NEWS SECTION******************
+ **********************************************/
+
+/* *********************************************
+******************CONTACTS SECTION**************
+ **********************************************/
+.contacts-logo-image {
+    width: 100%;
+}
+.contacts-link {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #001630;
+
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+}
+.contacts-logo-image {
+    max-width: 70px;
+}
+.contacts-group-image {
+    max-width: 100%;
+}
+.contacts-container {
+    margin-top: -10px;
+}
+.contacts-container > div {
+    margin-top: 10px;
+}
+/* *********************************************
+******************CONTACTS SECTION**************
+ **********************************************/
+
+/* *********************************************
+******************PARTNERS SECTION**************
+ **********************************************/
+.partner-image {
+    max-width: 100%;
+}
+.partner-text {
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.2em;
+}
+/* *********************************************
+******************PARTNERS SECTION**************
+ **********************************************/
+
+/* *********************************************
+******************SERVICE************************
+ **********************************************/
+.more-container {
+    width: 100%;
+    text-align: center;
+}
+.section-divider {
+    margin: 30px -15px;
+}
+.more-text {
+    font-size: 1.2em;
+    display: inline-block;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+/* *********************************************
+******************SERVICE************************
+ **********************************************/
+@media (max-width: 991.98px) {
+    .dropdown-menu {
+        border: none;
+        text-align: right;
+    }
+    .dropdown-item {
+        font-weight: 600;
+    }
+    /* Responsive Fonts */
+    .main-title {
+        font-size: 1.7em;
+    }
+    .second-title {
+        font-size: 1.2em;
+    }
+    .card-title, .partner-text, .contacts-link, .more-text {
+        font-size: 1em;
+    }
+    .card-text {
+        font-size: 0.9em;
+    }
+}
+@media (max-width: 767.98px) {
+    .main-title {
+        font-size: 1.2em;
+    }
+    .card-title, .partner-text, .contacts-link, .more-text {
+        font-size: 0.9em;
+    }
+}
