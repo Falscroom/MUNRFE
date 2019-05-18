@@ -10,12 +10,19 @@ use TCG\Voyager\Http\Controllers\ContentTypes\BaseType;
 
 class Image extends BaseType
 {
+    protected $path;
+
     public function handle()
     {
-        if ($this->request->hasFile($this->row->field)) {
+        if( $this->row == null && $this->request->file) {
+            $file = $this->request->file;
+            $path = $this->slug.DIRECTORY_SEPARATOR;
+        } else {
             $file = $this->request->file($this->row->field);
-
             $path = $this->slug.DIRECTORY_SEPARATOR.date('FY').DIRECTORY_SEPARATOR;
+        }
+
+        if ($file) {
 
             $filename = mb_substr($file->getClientOriginalName(),0,strpos($file->getClientOriginalName(),'.'));
 
@@ -66,6 +73,18 @@ class Image extends BaseType
                         $scale = intval($thumbnails->scale) / 100;
                         $thumb_resize_width = $resize_width;
                         $thumb_resize_height = $resize_height;
+
+                        if (isset($thumbnails->resize)) {
+                            $thumb_resize_width = null;
+                            $thumb_resize_height = null;
+
+                            if (isset($thumbnails->resize->width)) {
+                                $thumb_resize_width = $thumbnails->resize->width;
+                            }
+                            if (isset($thumbnails->resize->height)) {
+                                $thumb_resize_height = $thumbnails->resize->height;
+                            }
+                        }
 
                         if ($thumb_resize_width != null && $thumb_resize_width != 'null') {
                             $thumb_resize_width = intval($thumb_resize_width * $scale);

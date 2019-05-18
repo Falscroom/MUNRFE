@@ -18,7 +18,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-4">
                     <a href="{{ route('post', ['id' => $post->id]) }}">
                         <article class="card mr-2">
-                            <img src="{{ Voyager::image($post->thumbnail('medium') ) }}" class="card-img-top" alt="...">
+                            <img src="{{ Voyager::image($post->thumbnail('preview') ) }}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <div class="card-date">
                                     {{ $post->created_at }}
