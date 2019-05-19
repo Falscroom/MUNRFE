@@ -2,6 +2,7 @@
 
 namespace App;
 
+use phpDocumentor\Reflection\Types\Integer;
 use TCG\Voyager\Traits\Resizable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -42,4 +43,31 @@ use Illuminate\Database\Eloquent\Model;
 class MunrfePost extends Model
 {
     use Resizable;
+
+    /**
+     * @var array
+     */
+    private $dimensions;
+
+    /**
+     * @param int $key
+     * @return string
+     */
+    public function getWidth(int $key) {
+        if (!$this->dimensions) {
+            $this->dimensions = json_decode($this->gallery_dimensions);
+        }
+        return ($this->dimensions)[$key][0];
+    }
+
+    /**
+     * @param int $key
+     * @return string
+     */
+    public function getHeight(int $key) {
+        if (!$this->dimensions) {
+            $this->dimensions = json_decode($this->gallery_dimensions);
+        }
+        return ($this->dimensions)[$key][1];
+    }
 }

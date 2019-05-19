@@ -11,12 +11,13 @@ use App\Http\Controllers\Admin\ContentTypes\Image;
 class VoyagerMediaController extends BaseVoyagerMediaController
 {
     const OPTIONS = '{
+            "quality" : "75",
             "thumbnails": [
                 {
                     "name": "preview",
-                    "scale" : "70%",
+                    "scale" : "100%",
                     "resize" : {
-                        "height" : "400"
+                        "height" : "200"
                     }
                 }
             ]
@@ -42,7 +43,7 @@ class VoyagerMediaController extends BaseVoyagerMediaController
                 $path = '';
             }
         } else {
-            parent::upload($request);
+            return parent::upload($request);
         }
 
 

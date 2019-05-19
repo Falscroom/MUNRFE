@@ -4,7 +4,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> <!-- Загрузить нормально шрифты на сайт TODO !-->
 
     <link rel="stylesheet" href="{{ asset('/css/photoswipe.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/default-skin.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/default-skin/default-skin.css') }}">
 
     <link rel="stylesheet" href="{{ asset('/css/Bootstrap/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
@@ -58,10 +58,11 @@
     </main>
     <footer class="page-footer font-small" style="margin-top: 100px;">
     </footer>
-</div>
-    <script src="{{ asset('/js/app.js') }}"></script>
 
-    <script src="{{ asset('js/photoswipe.js') }}"></script>
-    <script src="{{ asset('js/photoswipe-ui-default.js') }}"></script>
+        <script src="{{ asset('/js/app.js') }}"></script>
+        <script src="{{ asset('js/photoswipe.js') }}"></script>
+        <script src="{{ asset('js/photoswipe-ui-default.js') }}"></script>
+        @yield('javascript')
+</div>
 </body>
 </html>
